@@ -1,7 +1,7 @@
 var getConfig = require('hjs-webpack');
 
 var config = getConfig({
-  in: 'src/index.js',
+  in: 'src/index.ts',
   out: 'public',
   clearBeforeBuild: true
 });
