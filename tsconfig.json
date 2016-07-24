@@ -6,6 +6,9 @@
     "strictNullChecks": true,
     "target": "es6"
   },
+  "awesomeTypescriptLoaderOptions": {
+    "useBabel": true
+  },
   "exclude": [
     "node_modules"
   ],
