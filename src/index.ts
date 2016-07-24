@@ -4,17 +4,17 @@ import {Stream} from 'xstream';
 import {DOMSource} from "@cycle/dom/xstream-typings";
 
 interface InputEvent extends Event {
-  target:EventTarget & HTMLInputElement
+  target: EventTarget & HTMLInputElement
 }
 
 export type Sources = {
-  DOM:DOMSource,
+  DOM: DOMSource
 }
 export type Sinks = {
-  DOM:Stream<VNode>,
+  DOM: Stream<VNode>
 }
 
-function main(sources:Sources):Sinks {
+function main(sources: Sources): Sinks {
   return {
     DOM: (sources.DOM.select('.myinput').events('input') as Stream<InputEvent>)
       .map(ev => ev.target.value)
@@ -22,7 +22,7 @@ function main(sources:Sources):Sinks {
       .map(name =>
         div([
           label('Name:'),
-          input('.myinput', {attrs: {type: 'text'}}),
+          input('.myinput', { attrs: { type: 'text' } }),
           hr(),
           h1(`Hello ${name}`)
         ])
@@ -38,5 +38,5 @@ run(main, {
   // THE DOM DRIVER
   // `makeDOMDriver(container)` from Cycle DOM returns a
   // driver function to interact with the DOM.
-  DOM: makeDOMDriver('#root', {transposition: true}),
+  DOM: makeDOMDriver('#root', { transposition: true }),
 });
