@@ -1,14 +1,22 @@
 {
   "compilerOptions": {
+    "module": "commonjs",
     "moduleResolution": "node",
     "noFallthroughCasesInSwitch": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
-    "target": "es6"
+    "target": "es6",
+    "baseUrl": "src",
+    "types": [
+      "../typings/modules/history/index.d.ts"
+    ]
   },
   "awesomeTypescriptLoaderOptions": {
     "useBabel": true
   },
+  "files": [
+    "src/index.ts"
+  ],
   "exclude": [
     "node_modules"
   ],

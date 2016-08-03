@@ -14,13 +14,22 @@
     "awesome-typescript-loader": "^2.1.0",
     "babel-core": "^6.11.4",
     "babel-preset-es2015": "^6.9.0",
+    "css-loader": "^0.23.1",
     "hjs-webpack": "^8.3.0",
+    "postcss-loader": "^0.9.1",
+    "style-loader": "^0.13.1",
     "typescript": "^2.0.0",
     "webpack": "^1.13.1"
   },
   "dependencies": {
     "@cycle/dom": "^11.0.1",
+    "@cycle/history": "^4.0.0",
+    "@cycle/isolate": "^1.4.0",
     "@cycle/xstream-run": "^3.0.3",
+    "cyclejs-storage": "^1.2.0",
+    "history": "^3.0.0",
+    "todomvc-app-css": "^2.0.6",
+    "todomvc-common": "^1.0.2",
     "xstream": "^5.3.1"
   }
 }

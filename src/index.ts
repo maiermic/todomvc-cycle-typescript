@@ -1,34 +1,18 @@
-import {run} from '@cycle/xstream-run';
-import {div, label, input, hr, h1, VNode, makeDOMDriver} from '@cycle/dom';
-import {Stream} from 'xstream';
-import {DOMSource} from "@cycle/dom/xstream-typings";
+import 'todomvc-common/base.css';
+import 'todomvc-app-css/index.css';
+import 'todomvc-common/base.js';
 
-interface InputEvent extends Event {
-  target: EventTarget & HTMLInputElement
-}
+import {run} from "@cycle/xstream-run";
+import {makeDOMDriver} from "@cycle/dom";
+import {makeHistoryDriver} from "@cycle/history";
+import {createHistory} from "history";
+import {makeStorageDriver} from "cyclejs-storage";
+import TaskList from "./components/TaskList";
+// THE MAIN FUNCTION
+// This is the todo list component.
 
-export type Sources = {
-  DOM: DOMSource
-}
-export type Sinks = {
-  DOM: Stream<VNode>
-}
+const main = TaskList;
 
-function main(sources: Sources): Sinks {
-  return {
-    DOM: (sources.DOM.select('.myinput').events('input') as Stream<InputEvent>)
-      .map(ev => ev.target.value)
-      .startWith('')
-      .map(name =>
-        div([
-          label('Name:'),
-          input('.myinput', { attrs: { type: 'text' } }),
-          hr(),
-          h1(`Hello ${name}`)
-        ])
-      )
-  };
-}
 
 // THE ENTRY POINT
 // This is where the whole story starts.
@@ -38,5 +22,12 @@ run(main, {
   // THE DOM DRIVER
   // `makeDOMDriver(container)` from Cycle DOM returns a
   // driver function to interact with the DOM.
-  DOM: makeDOMDriver('#root', { transposition: true }),
+  DOM: makeDOMDriver('.todoapp', { transposition: true }),
+  // THE HISTORY DRIVER
+  // A driver to interact with browser history
+  History: makeHistoryDriver(createHistory() as any, {capture: true}),
+  // THE STORAGE DRIVER
+  // The storage driver which can be used to access values for
+  // local- and sessionStorage keys as streams.
+  storage: makeStorageDriver()
 });
