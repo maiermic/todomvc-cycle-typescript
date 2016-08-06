@@ -102,7 +102,7 @@ function TaskList(sources: Sources): Sinks {
   // WRITE TO LOCALSTORAGE
   // The latest state is written to localStorage.
   let storage$ = serialize(state$).map((state) => ({
-    key: 'todos-cycle', value: state
+    key: 'todos-cycle', value: state, target: 'local'
   }));
   // COMPLETE THE CYCLE
   // Write the virtual dom stream to the DOM and write the
