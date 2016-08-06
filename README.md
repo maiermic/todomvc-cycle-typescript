@@ -2,7 +2,7 @@
 
 TodoMVC example implemented in [Cycle.js](http://cycle.js.org) and [TypeScript](typescriptlang.org). This version is a port of the [JavaScript TodoMVC example](https://github.com/cyclejs/todomvc-cycle) created by [Andre Staltz](http://andre.staltz.com)
 
-[Open the app]( http://cycle.js.org/todomvc-cycle/ )
+[Open the app](http://todomvc-cycle-typescript.maiermic.surge.sh/)
 
 - - -
 
