@@ -1,5 +1,5 @@
 import xs, {Stream} from 'xstream';
-import {DOMSource} from "@cycle/dom/xstream-typings";
+import {DOMSource} from "../../cycle-dom-xstream";
 import {ENTER_KEY, ESC_KEY} from '../../utils';
 import {InputEvent} from '../../events';
 import {TaskAction, DoneEditAction} from "./actions";

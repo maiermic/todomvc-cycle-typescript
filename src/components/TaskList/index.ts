@@ -1,7 +1,7 @@
 import * as cycleHistory from '@cycle/history'
 import xs, {Stream} from 'xstream';
 import {VNode} from '@cycle/dom';
-import {DOMSource} from "@cycle/dom/xstream-typings";
+import {DOMSource} from "../../cycle-dom-xstream";
 import isolate from '@cycle/isolate'
 import intent from './intent';
 import model, {TodosData, TodosListItem} from './model';

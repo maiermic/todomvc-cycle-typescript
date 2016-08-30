@@ -1,7 +1,7 @@
 import xs, {Stream} from 'xstream';
 import dropRepeats from 'xstream/extra/dropRepeats';
 import * as cycleHistory from '@cycle/history'
-import {DOMSource} from "@cycle/dom/xstream-typings";
+import {DOMSource} from "../../cycle-dom-xstream";
 import {ENTER_KEY, ESC_KEY} from '../../utils';
 import {AnchorEvent, InputEvent} from '../../events';
 import {

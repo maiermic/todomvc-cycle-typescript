@@ -1,5 +1,5 @@
 import {Stream} from 'xstream';
-import {DOMSource} from "@cycle/dom/xstream-typings";
+import {DOMSource} from "../../cycle-dom-xstream";
 import {VNode} from '@cycle/dom';
 import intent from './intent';
 import model, {TaskProperties} from './model';
